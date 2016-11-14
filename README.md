@@ -1,2 +1,2 @@
 # bash-scripts
-little occasionally useful bash scripts
+Little, occasionally useful, bash scripts
