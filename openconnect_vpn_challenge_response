@@ -1,4 +1,5 @@
 #!/bin/bash
+#MD only tested on Ubuntu 16.04
 #vars
 user='username'
 url='https://vpnserver'
