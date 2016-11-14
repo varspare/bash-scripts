@@ -1,0 +1,21 @@
+#!/bin/bash
+#vars
+user='username'
+url='https://vpnserver'
+exclude_list='dirtyhack'
+networks='' #leave this blank
+
+
+#figure
+networks=$(/usr/bin/nmcli -t -f active,ssid dev wifi | /bin/egrep '^yes' | /bin/egrep -i "${exclude_list}")
+vpn=$(/sbin/ifconfig tun0 &>/dev/null;echo $?)
+
+#script
+ if [[ -z "${networks}" && "${vpn}" -eq '1' ]];then
+    sudo /usr/sbin/openconnect "${url}" -u "$[user}"
+  else
+    printf "You are already connected to a client network and will not be able to VPN\n"
+    sleep 30
+    exit 0
+  fi
+exit 0
