@@ -2,6 +2,8 @@
 # Author MD
 #script to iterate over all your local git repos and pull the latest master
 #tested on ubuntu 16.04 nothing else not even a mac... at least not yet.
+# I've just written an this expansive version to remind me of how to do some things,
+# the simple version is the core exec of the script at the bottom.
 #
 #set some temp vars
 basec=''
