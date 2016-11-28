@@ -57,7 +57,7 @@ if [[ ! "${searchloc}" == '.' ]];then
 fi
 
 #find stuff and run git
-for dir in $(findcmd | sed s'/.git//g')
+for dir in $(findcmd | sed s'/\/.git//g')
   do
     printf "${dir}\n"
     cd "${dir}"
