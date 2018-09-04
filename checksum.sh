@@ -38,6 +38,7 @@ elif [[ "${lencheck}" -eq 97 ]];then
   stype='sha384'
 elif [[ "${lencheck}" -eq 129 ]];then
   stype='sha512'
+#Note: the following aren't cryptographic hashes so shouldn't be used for real files
 elif [[ "${lencheck}" -eq 11 ]];then
   stype='ck' #CRC
 elif [[ "${lencheck}" -eq 6 ]];then
