@@ -15,6 +15,7 @@ check=''
 lencheck=0
 stype=''
 sum=''
+manual=0
 if [[ ! -f "${file}" ]]
 then
   printf "Error: Unable to reach file, please check the path\n"
@@ -46,6 +47,14 @@ elif [[ "${lencheck}" -eq 6 ]];then
 else
   printf "Unable to determine hash type\nPlease enter hash type manually: "
   read stype
+  manual=1
+fi
+
+if [[ -n "${stype}" && manual -eq 0 ]]
+then
+  printf "Hash type is: ${stype}\n"
+else
+  printf "Unable to determine hash type.\n"
 fi
 
 cmd=$(which "${stype}sum")
